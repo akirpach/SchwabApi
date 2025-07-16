@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SchwabSaaS")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+83c8869e15acf7cffe3537020a715b34b2174f3a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+089f9a265cf3cd4a1d1b76f6177aeec48a6874d6")]
 [assembly: System.Reflection.AssemblyProductAttribute("SchwabSaaS")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SchwabSaaS")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

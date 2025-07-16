@@ -57,7 +57,7 @@ namespace backend.Controllers
             var creadentials = $"{_settings.ClientId}:{_settings.ClientSecret}";
             var encodedCreds = Convert.ToBase64String(Encoding.UTF8.GetBytes(creadentials));
 
-            var request = new HttpRequestMessage(HttpMethod.Post, "https://api.schwabapi.com/v1/oauth/token");
+            var request = new HttpRequestMessage(HttpMethod.Post, _settings.TokenUrl);
 
             request.Headers.Authorization = new AuthenticationHeaderValue("Basic", encodedCreds);
             request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/x-www-form-urlencoded"));
