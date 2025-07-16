@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "h//JxnhK61I=",
+  "dgSpecHash": "bkMoJoN27/M=",
   "success": true,
-  "projectFilePath": "/Users/garcondeua/Desktop/dev/SchwabApi/backend/SampleStartUp.csproj",
+  "projectFilePath": "/Users/garcondeua/Desktop/dev/SchwabApi/backend/SchwabSaaS.csproj",
   "expectedPackageFiles": [
     "/Users/garcondeua/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/garcondeua/.nuget/packages/microsoft.aspnetcore.openapi/9.0.6/microsoft.aspnetcore.openapi.9.0.6.nupkg.sha512",

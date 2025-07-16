@@ -13,12 +13,5 @@ namespace SampleStartUp.Controllers
         {
             _context = context;
         }
-
-        public IActionResult GetUsers()
-        {
-            var users = _context.Users.ToArray(); 
-
-            return Ok(users);
-        }        
     }
 }

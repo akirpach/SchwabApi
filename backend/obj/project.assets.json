@@ -2370,9 +2370,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/garcondeua/Desktop/dev/SchwabApi/backend/SampleStartUp.csproj",
-      "projectName": "SampleStartUp",
-      "projectPath": "/Users/garcondeua/Desktop/dev/SchwabApi/backend/SampleStartUp.csproj",
+      "projectUniqueName": "/Users/garcondeua/Desktop/dev/SchwabApi/backend/SchwabSaaS.csproj",
+      "projectName": "SchwabSaaS",
+      "projectPath": "/Users/garcondeua/Desktop/dev/SchwabApi/backend/SchwabSaaS.csproj",
       "packagesPath": "/Users/garcondeua/.nuget/packages/",
       "outputPath": "/Users/garcondeua/Desktop/dev/SchwabApi/backend/obj/",
       "projectStyle": "PackageReference",

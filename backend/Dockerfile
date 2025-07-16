@@ -1,18 +1,21 @@
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /src
 
-COPY ["SampleStartUp.csproj", "./"]
-RUN dotnet restore "SampleStartUp.csproj"
+COPY ["SchwabSaaS.csproj", "./"]
+RUN dotnet restore "SchwabSaaS.csproj"
 
 COPY . ./
-RUN dotnet build "SampleStartUp.csproj" -c Release -o /app/build
+RUN dotnet build "SchwabSaaS.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "SampleStartUp.csproj" -c Release -o /app/publish
+RUN dotnet publish "SchwabSaaS.csproj" -c Release -o /app/publish
 
 FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 
+# Set environment for config loading
+ENV ASPNETCORE_ENVIRONMENT=Docker
+
 EXPOSE 80
-ENTRYPOINT ["dotnet", "SampleStartUp.dll"]
+ENTRYPOINT ["dotnet", "SchwabSaaS.dll"]

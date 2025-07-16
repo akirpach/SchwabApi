@@ -1,0 +1,2 @@
+# Ignore local development config
+/backend/appsettings.Development.json
