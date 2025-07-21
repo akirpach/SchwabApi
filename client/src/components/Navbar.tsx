@@ -1,8 +1,8 @@
 // src/components/Navigation.tsx
 import React, { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Database, Menu, X } from "lucide-react";
 
-const Navigation: React.FC = () => {
+const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -17,107 +17,65 @@ const Navigation: React.FC = () => {
   }, []);
 
   return (
-    <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-slate-900/95 backdrop-blur-md border-b border-slate-800"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <div className="flex items-center">
-            <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
-              SchwabSaaS
-            </span>
+    <header className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
+      <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
+        <div className="flex items-center">
+          <div className="text-blue-600 mr-2">
+            <Database size={28} />
           </div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
-              <a
-                href="#features"
-                className="text-slate-300 hover:text-white transition-colors cursor-pointer"
-              >
-                Features
-              </a>
-              <a
-                href="#pricing"
-                className="text-slate-300 hover:text-white transition-colors cursor-pointer"
-              >
-                Pricing
-              </a>
-              <a
-                href="#docs"
-                className="text-slate-300 hover:text-white transition-colors cursor-pointer"
-              >
-                Docs
-              </a>
-              <button
-                className="bg-gradient-to-r from-purple-500 to-pink-600 text-white px-6 py-2 rounded-lg hover:from-purple-600 hover:to-pink-700 transition-all duration-200 transform hover:scale-105"
-                onClick={() => alert("Get Started clicked!")}
-              >
-                Get Started
-              </button>
-            </div>
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-slate-300 hover:text-white focus:outline-none"
-            >
-              {isMenuOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
-            </button>
-          </div>
+          <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+            SchwabSaaS
+          </span>
         </div>
-      </div>
+
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center space-x-8">
+          {["How It Works", "Features", "Use Cases", "Pricing", "FAQ"].map(
+            (item) => (
+              <button
+                key={item}
+                className="text-sm font-medium hover:text-blue-600 transition-colors text-gray-600"
+              >
+                {item}
+              </button>
+            )
+          )}
+          <button className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg text-sm font-medium transition-all shadow-lg shadow-blue-600/20 hover:shadow-blue-600/30">
+            Get Started
+          </button>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden text-gray-700"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </nav>
 
       {/* Mobile Navigation Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-slate-900/95 backdrop-blur-md border-b border-slate-800">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a
-              href="#features"
-              className="block px-3 py-2 text-slate-300 hover:text-white transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Features
-            </a>
-            <a
-              href="#pricing"
-              className="block px-3 py-2 text-slate-300 hover:text-white transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Pricing
-            </a>
-            <a
-              href="#docs"
-              className="block px-3 py-2 text-slate-300 hover:text-white transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Docs
-            </a>
-            <button
-              className="w-full text-left bg-gradient-to-r from-purple-500 to-pink-600 text-white px-3 py-2 rounded-lg mt-2 hover:from-purple-600 hover:to-pink-700 transition-all"
-              onClick={() => {
-                alert("Get Started clicked!");
-                setIsMenuOpen(false);
-              }}
-            >
+        <div className="md:hidden bg-white border-t border-gray-100 px-6 py-4 shadow-lg">
+          <div className="flex flex-col space-y-4">
+            {["How It Works", "Features", "Use Cases", "Pricing", "FAQ"].map(
+              (item) => (
+                <button
+                  key={item}
+                  className="text-sm font-medium hover:text-blue-600 transition-colors text-gray-600"
+                >
+                  {item}
+                </button>
+              )
+            )}
+            <button className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg text-sm font-medium transition-all shadow-md shadow-blue-600/20 mt-2 text-center">
               Get Started
             </button>
           </div>
         </div>
       )}
-    </nav>
+    </header>
   );
 };
 
-export default Navigation;
+export default Navbar;

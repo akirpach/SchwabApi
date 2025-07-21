@@ -1,18 +1,25 @@
 import { useState } from "react";
 import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Features from "./components/Features";
+import HowItWorks from "./components/Howitworks";
+import Pricing from "./components/Pricing";
+import Cta from "./components/Cta";
+import Faq from "./components/Faq";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br neutral-50">
+    <div className="min-h-screen bg-white text-gray-900 font-sans">
       <Navbar />
-      <div className="flex items-center justify-center h-screen">
-        <h1 className="text-4xl font-bold text-black">
-          SchwabSaaS -
-          <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
-            Tailwind is Working!
-          </span>
-        </h1>
-      </div>
+      <main className="pt-16"></main>
+      <Hero />
+      <HowItWorks />
+      <Features />
+      <Pricing />
+      <Cta />
+      <Faq />
+      <Footer />
     </div>
   );
 }
