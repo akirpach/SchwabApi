@@ -71,19 +71,23 @@ const Pricing = () => {
           {plans.map((plan, i) => (
             <div
               key={i}
-              className={`flex-1 rounded-xl overflow-hidden transition-all border ${
+              className={`flex-1 rounded-xl overflow-hidden transition-all border flex flex-col ${
                 plan.popular
                   ? "border-blue-500 shadow-xl shadow-blue-100"
                   : "border-gray-200 shadow-sm"
               }`}
             >
-              {plan.popular && (
+              {plan.popular ? (
                 <div className="bg-blue-500 text-white text-xs font-medium py-1 text-center">
                   MOST POPULAR
                 </div>
+              ) : (
+                <div className="text-xs font-medium py-1 text-center invisible">
+                  SPACER
+                </div>
               )}
 
-              <div className="p-8">
+              <div className="p-8 flex-1 flex flex-col">
                 <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
                 <div className="flex items-baseline mb-4">
                   <span className="text-4xl font-bold">{plan.price}</span>
@@ -101,7 +105,7 @@ const Pricing = () => {
                   {plan.cta}
                 </button>
 
-                <div className="mt-8 space-y-4">
+                <div className="mt-8 space-y-4 flex-1">
                   {plan.features.map((feature, j) => (
                     <div key={j} className="flex items-start">
                       {feature.included ? (
