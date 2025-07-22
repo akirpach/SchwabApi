@@ -104,3 +104,15 @@
 /Users/garcondeua/Desktop/dev/SchwabApi/backend/obj/Debug/net9.0/SchwabSaaS.pdb
 /Users/garcondeua/Desktop/dev/SchwabApi/backend/obj/Debug/net9.0/SchwabSaaS.genruntimeconfig.cache
 /Users/garcondeua/Desktop/dev/SchwabApi/backend/obj/Debug/net9.0/ref/SchwabSaaS.dll
+/Users/garcondeua/Desktop/dev/SchwabApi/backend/bin/Debug/net9.0/BCrypt.Net-Next.dll
+/Users/garcondeua/Desktop/dev/SchwabApi/backend/bin/Debug/net9.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/garcondeua/Desktop/dev/SchwabApi/backend/bin/Debug/net9.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/garcondeua/Desktop/dev/SchwabApi/backend/bin/Debug/net9.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/garcondeua/Desktop/dev/SchwabApi/backend/bin/Debug/net9.0/Microsoft.IdentityModel.Logging.dll
+/Users/garcondeua/Desktop/dev/SchwabApi/backend/bin/Debug/net9.0/Microsoft.IdentityModel.Protocols.dll
+/Users/garcondeua/Desktop/dev/SchwabApi/backend/bin/Debug/net9.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/garcondeua/Desktop/dev/SchwabApi/backend/bin/Debug/net9.0/Microsoft.IdentityModel.Tokens.dll
+/Users/garcondeua/Desktop/dev/SchwabApi/backend/bin/Debug/net9.0/Swashbuckle.AspNetCore.Swagger.dll
+/Users/garcondeua/Desktop/dev/SchwabApi/backend/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/garcondeua/Desktop/dev/SchwabApi/backend/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/Users/garcondeua/Desktop/dev/SchwabApi/backend/bin/Debug/net9.0/System.IdentityModel.Tokens.Jwt.dll
