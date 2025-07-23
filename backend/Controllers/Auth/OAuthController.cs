@@ -1,5 +1,6 @@
 using backend.Data;
 using backend.Models;
+using backend.Models.DTOs;
 using backend.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
@@ -12,19 +13,22 @@ namespace backend.Controllers
 {
     [ApiController]
     [Route("api/auth")]
-    public class AuthController : ControllerBase
+    public class OAuthController : ControllerBase
     {
         private readonly SchwabOAuthSettings _settings;
         private readonly IHttpClientFactory _httpClientFactory;
-        private readonly AppDbContext _dbContext;
         private readonly ITokenService _tokenService;
-        public AuthController(IOptions<SchwabOAuthSettings> options, IHttpClientFactory httpClientFactory, AppDbContext dbContext, ITokenService tokenService)
+
+
+        public OAuthController(
+            IOptions<SchwabOAuthSettings> options,
+            IHttpClientFactory httpClientFactory,
+            ITokenService tokenService
+            )
         {
             _settings = options.Value;
             _httpClientFactory = httpClientFactory;
-            _dbContext = dbContext;
             _tokenService = tokenService;
-
         }
 
         [HttpGet("initiate")]
@@ -96,6 +100,8 @@ namespace backend.Controllers
 
             return Ok(token);
         }
+
+
     }
 
 }

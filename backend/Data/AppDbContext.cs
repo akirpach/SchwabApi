@@ -20,9 +20,11 @@ namespace backend.Data
             {
                 entity.ToTable("tenants");
                 entity.HasKey(e => e.Id);
-                entity.Property(e => e.Name).HasMaxLength(100).IsRequired();
-                entity.Property(e => e.Subdomain).HasMaxLength(50).IsRequired();
-                entity.HasIndex(e => e.Subdomain).IsUnique();
+
+                // Map all properties to lowercase column names
+                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.Name).HasColumnName("name").HasMaxLength(100).IsRequired();
+                entity.Property(e => e.Subdomain).HasColumnName("subdomain").HasMaxLength(50).IsRequired();
                 entity.Property(e => e.CreatedAt).HasColumnName("created_at");
             });
 
@@ -31,12 +33,14 @@ namespace backend.Data
             {
                 entity.ToTable("users");
                 entity.HasKey(e => e.Id);
-                entity.Property(e => e.Email).HasMaxLength(255).IsRequired();
-                entity.HasIndex(e => e.Email).IsUnique();
-                entity.Property(e => e.FirstName).HasMaxLength(50).IsRequired().HasColumnName("first_name");
-                entity.Property(e => e.LastName).HasMaxLength(50).IsRequired().HasColumnName("last_name");
-                entity.Property(e => e.PasswordHash).HasMaxLength(255).IsRequired().HasColumnName("password_hash");
+
+                // Map all properties to lowercase/snake_case column names
+                entity.Property(e => e.Id).HasColumnName("id");
                 entity.Property(e => e.TenantId).HasColumnName("tenant_id");
+                entity.Property(e => e.Email).HasColumnName("email").HasMaxLength(255).IsRequired();
+                entity.Property(e => e.PasswordHash).HasColumnName("password_hash").HasMaxLength(255).IsRequired();
+                entity.Property(e => e.FirstName).HasColumnName("first_name").HasMaxLength(50).IsRequired();
+                entity.Property(e => e.LastName).HasColumnName("last_name").HasMaxLength(50).IsRequired();
                 entity.Property(e => e.CreatedAt).HasColumnName("created_at");
 
                 // Foreign key relationship
