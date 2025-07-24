@@ -16,3 +16,6 @@ bld/
 
 # Ignore local development config
 /backend/appsettings.Development.json
+
+# Ignore claude.md
+/claude.md
