@@ -29,8 +29,11 @@ const Navbar: React.FC = () => {
               </button>
             )
           )}
+          <button className="text-sm font-medium hover:text-gray-900 transition-colors text-gray-600">
+            Sign In
+          </button>
           <button className="bg-gray-900 hover:bg-gray-800 text-white px-5 py-2 rounded text-sm font-medium transition-colors">
-            Get Started
+            Sign Up
           </button>
         </div>
 
@@ -57,8 +60,11 @@ const Navbar: React.FC = () => {
                 </button>
               )
             )}
+            <button className="text-sm font-medium hover:text-gray-900 transition-colors text-gray-600 text-left">
+              Sign In
+            </button>
             <button className="bg-gray-900 hover:bg-gray-800 text-white px-5 py-2 rounded text-sm font-medium transition-colors mt-2 text-center">
-              Get Started
+              Sign Up
             </button>
           </div>
         </div>

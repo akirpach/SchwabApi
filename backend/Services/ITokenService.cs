@@ -11,5 +11,10 @@ namespace backend.Services
         Task SaveTokenAsync(SchwabTokenResponse tokenResponse);
         Task<OAuthToken?> GetValidTokenAsync();
         Task<OAuthToken?> RefreshTokenAsync();
+        Task<OAuthToken?> GetCurrentTokenAsync();
+        Task<bool> IsTokenValidAsync();
+        Task<TimeSpan?> GetTimeUntilExpiryAsync();
+        Task<bool> NeedsOAuthFlowRestartAsync();
+        Task<TimeSpan?> GetRefreshTokenAgeAsync();
     }
 }

@@ -16,6 +16,8 @@ builder.Services.AddScoped<ITokenService, TokenService>();
 
 
 builder.Services.Configure<SchwabOAuthSettings>(builder.Configuration.GetSection("SchwabOAuth"));
+builder.Services.Configure<TokenRefreshSettings>(builder.Configuration.GetSection("TokenRefresh"));
+
 // DB Context
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -23,6 +25,10 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.AddScoped<ITenantService, TenantService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+
+// Add Background Service for Token Refresh
+builder.Services.AddHostedService<TokenRefreshBackgroundService>();
+
 
 // Add CORS for frontend
 builder.Services.AddCors(options =>
