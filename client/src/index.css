@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
-/* Custom scrollbar for JSON display */
+/* Minimalistic scrollbar */
 .json-scroll::-webkit-scrollbar {
-  width: 6px;
+  width: 4px;
 }
 
 .json-scroll::-webkit-scrollbar-track {
-  background: #1e293b;
+  background: #f8fafc;
 }
 
 .json-scroll::-webkit-scrollbar-thumb {
-  background: #475569;
-  border-radius: 3px;
+  background: #e2e8f0;
+  border-radius: 2px;
 }
 
 .json-scroll::-webkit-scrollbar-thumb:hover {
-  background: #64748b;
+  background: #cbd5e1;
 }

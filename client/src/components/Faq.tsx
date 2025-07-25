@@ -1,4 +1,3 @@
-import React from "react";
 import { ChevronDown } from "lucide-react";
 
 export default function FAQ() {
@@ -26,10 +25,10 @@ export default function FAQ() {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
             Frequently Asked Questions
           </h2>
           <p className="text-gray-600">
@@ -41,11 +40,11 @@ export default function FAQ() {
           {faqs.map((faq, i) => (
             <div
               key={i}
-              className="border border-gray-200 rounded-lg overflow-hidden"
+              className="border border-gray-200 rounded overflow-hidden bg-white"
             >
               <details className="group">
                 <summary className="flex justify-between items-center p-6 cursor-pointer list-none">
-                  <h3 className="font-medium text-lg">{faq.question}</h3>
+                  <h3 className="font-medium text-lg text-gray-900">{faq.question}</h3>
                   <ChevronDown
                     size={20}
                     className="text-gray-500 group-open:rotate-180 transition-transform"

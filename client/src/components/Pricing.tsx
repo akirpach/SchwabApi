@@ -1,4 +1,3 @@
-import React from "react";
 
 const Pricing = () => {
   const plans = [
@@ -59,7 +58,7 @@ const Pricing = () => {
     <section id="pricing" className="py-20 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
             Pay only for what you need
           </h2>
           <p className="text-gray-600">
@@ -71,34 +70,34 @@ const Pricing = () => {
           {plans.map((plan, i) => (
             <div
               key={i}
-              className={`flex-1 rounded-xl overflow-hidden transition-all border flex flex-col ${
+              className={`flex-1 rounded border overflow-hidden transition-all flex flex-col ${
                 plan.popular
-                  ? "border-blue-500 shadow-xl shadow-blue-100"
-                  : "border-gray-200 shadow-sm"
+                  ? "border-gray-900"
+                  : "border-gray-200"
               }`}
             >
               {plan.popular ? (
-                <div className="bg-blue-500 text-white text-xs font-medium py-1 text-center">
+                <div className="bg-gray-900 text-white text-xs font-medium py-2 text-center">
                   MOST POPULAR
                 </div>
               ) : (
-                <div className="text-xs font-medium py-1 text-center invisible">
+                <div className="text-xs font-medium py-2 text-center invisible">
                   SPACER
                 </div>
               )}
 
               <div className="p-8 flex-1 flex flex-col">
-                <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
+                <h3 className="text-xl font-bold mb-2 text-gray-900">{plan.name}</h3>
                 <div className="flex items-baseline mb-4">
-                  <span className="text-4xl font-bold">{plan.price}</span>
+                  <span className="text-4xl font-bold text-gray-900">{plan.price}</span>
                   <span className="text-gray-500 ml-1">{plan.period}</span>
                 </div>
                 <p className="text-gray-600 mb-6">{plan.description}</p>
 
                 <button
-                  className={`w-full rounded-lg py-3 font-medium transition-all ${
+                  className={`w-full rounded py-3 font-medium transition-colors ${
                     plan.popular
-                      ? "bg-blue-500 hover:bg-blue-600 text-white"
+                      ? "bg-gray-900 hover:bg-gray-800 text-white"
                       : "bg-gray-100 hover:bg-gray-200 text-gray-800"
                   }`}
                 >
@@ -109,9 +108,9 @@ const Pricing = () => {
                   {plan.features.map((feature, j) => (
                     <div key={j} className="flex items-start">
                       {feature.included ? (
-                        <div className="w-5 h-5 rounded-full bg-blue-500 flex-shrink-0 flex items-center justify-center mt-0.5">
+                        <div className="w-4 h-4 rounded bg-gray-900 flex-shrink-0 flex items-center justify-center mt-0.5">
                           <svg
-                            className="w-3 h-3 text-white"
+                            className="w-2 h-2 text-white"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -120,15 +119,15 @@ const Pricing = () => {
                             <path
                               strokeLinecap="round"
                               strokeLinejoin="round"
-                              strokeWidth="3"
+                              strokeWidth="4"
                               d="M5 13l4 4L19 7"
                             ></path>
                           </svg>
                         </div>
                       ) : (
-                        <div className="w-5 h-5 rounded-full bg-gray-200 flex-shrink-0 flex items-center justify-center mt-0.5">
+                        <div className="w-4 h-4 rounded bg-gray-200 flex-shrink-0 flex items-center justify-center mt-0.5">
                           <svg
-                            className="w-3 h-3 text-gray-400"
+                            className="w-2 h-2 text-gray-400"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -137,7 +136,7 @@ const Pricing = () => {
                             <path
                               strokeLinecap="round"
                               strokeLinejoin="round"
-                              strokeWidth="3"
+                              strokeWidth="4"
                               d="M6 18L18 6M6 6l12 12"
                             ></path>
                           </svg>

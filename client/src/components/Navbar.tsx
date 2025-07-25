@@ -1,29 +1,18 @@
 // src/components/Navigation.tsx
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Database, Menu, X } from "lucide-react";
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  // Track scroll position for background blur effect
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
+    <header className="fixed top-0 left-0 right-0 bg-white z-50 border-b border-gray-200">
       <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
         <div className="flex items-center">
-          <div className="text-blue-600 mr-2">
-            <Database size={28} />
+          <div className="text-gray-900 mr-2">
+            <Database size={24} />
           </div>
-          <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+          <span className="text-xl font-semibold text-gray-900">
             SchwabSaaS
           </span>
         </div>
@@ -34,13 +23,13 @@ const Navbar: React.FC = () => {
             (item) => (
               <button
                 key={item}
-                className="text-sm font-medium hover:text-blue-600 transition-colors text-gray-600"
+                className="text-sm font-medium hover:text-gray-900 transition-colors text-gray-600"
               >
                 {item}
               </button>
             )
           )}
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg text-sm font-medium transition-all shadow-lg shadow-blue-600/20 hover:shadow-blue-600/30">
+          <button className="bg-gray-900 hover:bg-gray-800 text-white px-5 py-2 rounded text-sm font-medium transition-colors">
             Get Started
           </button>
         </div>
@@ -56,19 +45,19 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Navigation Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100 px-6 py-4 shadow-lg">
+        <div className="md:hidden bg-white border-t border-gray-200 px-6 py-4">
           <div className="flex flex-col space-y-4">
             {["How It Works", "Features", "Use Cases", "Pricing", "FAQ"].map(
               (item) => (
                 <button
                   key={item}
-                  className="text-sm font-medium hover:text-blue-600 transition-colors text-gray-600"
+                  className="text-sm font-medium hover:text-gray-900 transition-colors text-gray-600"
                 >
                   {item}
                 </button>
               )
             )}
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg text-sm font-medium transition-all shadow-md shadow-blue-600/20 mt-2 text-center">
+            <button className="bg-gray-900 hover:bg-gray-800 text-white px-5 py-2 rounded text-sm font-medium transition-colors mt-2 text-center">
               Get Started
             </button>
           </div>
