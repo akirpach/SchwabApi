@@ -24,3 +24,4 @@ bld/
 # Ignore environment files
 /.env
 /client/.env
+backend/appsettings.json
