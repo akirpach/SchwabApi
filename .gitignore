@@ -15,7 +15,12 @@ bld/
 [Ll]ogs/
 
 # Ignore local development config
+/backend/appsettings.json
 /backend/appsettings.Development.json
 
 # Ignore claude.md
 /claude.md
+
+# Ignore environment files
+/.env
+/client/.env

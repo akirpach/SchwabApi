@@ -1,6 +1,7 @@
 // src/components/Navigation.tsx
 import React, { useState } from "react";
 import { Database, Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -8,14 +9,14 @@ const Navbar: React.FC = () => {
   return (
     <header className="fixed top-0 left-0 right-0 bg-white z-50 border-b border-gray-200">
       <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
-        <div className="flex items-center">
+        <Link to="/" className="flex items-center">
           <div className="text-gray-900 mr-2">
             <Database size={24} />
           </div>
           <span className="text-xl font-semibold text-gray-900">
             SchwabSaaS
           </span>
-        </div>
+        </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
@@ -29,12 +30,18 @@ const Navbar: React.FC = () => {
               </button>
             )
           )}
-          <button className="text-sm font-medium hover:text-gray-900 transition-colors text-gray-600">
+          <Link 
+            to="/sign-in"
+            className="text-sm font-medium hover:text-gray-900 transition-colors text-gray-600"
+          >
             Sign In
-          </button>
-          <button className="bg-gray-900 hover:bg-gray-800 text-white px-5 py-2 rounded text-sm font-medium transition-colors">
+          </Link>
+          <Link 
+            to="/sign-up"
+            className="bg-gray-900 hover:bg-gray-800 text-white px-5 py-2 rounded text-sm font-medium transition-colors"
+          >
             Sign Up
-          </button>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -60,12 +67,18 @@ const Navbar: React.FC = () => {
                 </button>
               )
             )}
-            <button className="text-sm font-medium hover:text-gray-900 transition-colors text-gray-600 text-left">
+            <Link 
+              to="/sign-in"
+              className="text-sm font-medium hover:text-gray-900 transition-colors text-gray-600 text-left"
+            >
               Sign In
-            </button>
-            <button className="bg-gray-900 hover:bg-gray-800 text-white px-5 py-2 rounded text-sm font-medium transition-colors mt-2 text-center">
+            </Link>
+            <Link 
+              to="/sign-up"
+              className="bg-gray-900 hover:bg-gray-800 text-white px-5 py-2 rounded text-sm font-medium transition-colors mt-2 text-center block"
+            >
               Sign Up
-            </button>
+            </Link>
           </div>
         </div>
       )}

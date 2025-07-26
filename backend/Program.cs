@@ -17,6 +17,7 @@ builder.Services.AddScoped<ITokenService, TokenService>();
 
 builder.Services.Configure<SchwabOAuthSettings>(builder.Configuration.GetSection("SchwabOAuth"));
 builder.Services.Configure<TokenRefreshSettings>(builder.Configuration.GetSection("TokenRefresh"));
+builder.Services.Configure<GoogleOAuthSettings>(builder.Configuration.GetSection("GoogleOAuth"));
 
 // DB Context
 builder.Services.AddDbContext<AppDbContext>(options =>

@@ -10,6 +10,11 @@ namespace backend.Models
         public string LastName { get; set; } = string.Empty;
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
+        // Google OAuth fields
+        public string? GoogleId { get; set; }
+        public string? GooglePictureUrl { get; set; }
+        public bool IsGoogleUser { get; set; } = false;
+
         // Navigation property
         public Tenant Tenant { get; set; } = null!;
 

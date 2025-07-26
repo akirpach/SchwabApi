@@ -42,4 +42,14 @@ namespace backend.Models.DTOs
         public string Name { get; set; } = string.Empty;
         public string Subdomain { get; set; } = string.Empty;
     }
+
+    public class GoogleAuthRequest
+    {
+        public string IdToken { get; set; } = string.Empty;
+        
+        // For creating new tenants
+        public bool IsNewTenant { get; set; }
+        public string? TenantName { get; set; }
+        public string? Subdomain { get; set; }
+    }
 }
